@@ -1,10 +1,13 @@
 package gdsc.RunEatServer.domain.asset.repository;
 
+
 import gdsc.RunEatServer.domain.asset.entity.CharacterImage;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CharacterImageRepository extends JpaRepository<Long, CharacterImage> {
+import java.util.List;
+import java.util.Optional;
 
-
-
+public interface CharacterImageRepository extends JpaRepository<CharacterImage,Long> {
+    @Override
+    Optional<CharacterImage> findById(Long aLong);
 }

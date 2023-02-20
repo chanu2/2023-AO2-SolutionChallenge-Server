@@ -13,8 +13,7 @@ import static javax.persistence.FetchType.*;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Character {
-
+public class RunEatCharacter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,14 +22,11 @@ public class Character {
     @JoinColumn(name = "user_id")
     private User user;
     private String characterImagePath;
-
     private Integer nowCharacterCalorie;
-
     private Integer maxCharacterCalorie;
 
     @Builder
-    public Character(Long id, User user, String characterImagePath, Integer nowCharacterCalorie, Integer maxCharacterCalorie) {
-        this.id = id;
+    public RunEatCharacter(User user, String characterImagePath, Integer nowCharacterCalorie, Integer maxCharacterCalorie) {
         this.user = user;
         this.characterImagePath = characterImagePath;
         this.nowCharacterCalorie = nowCharacterCalorie;
