@@ -1,4 +1,4 @@
-package gdsc.RunEatServer.domain.character.entity;
+package gdsc.RunEatServer.domain.runeatcharacter.entity;
 
 import gdsc.RunEatServer.domain.user.entity.User;
 import lombok.AccessLevel;

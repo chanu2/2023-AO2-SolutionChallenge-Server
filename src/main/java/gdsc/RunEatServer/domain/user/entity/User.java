@@ -36,8 +36,7 @@ public class User {
     private Integer nowCalorie;
 
     @Builder
-    public User(Long id, String profilePath, Gender gender, String nickname, Integer accumulatedCalorie, Integer nowCalorie) {
-        this.id = id;
+    public User(String profilePath, Gender gender, String nickname, Integer accumulatedCalorie, Integer nowCalorie) {
         this.profilePath = profilePath;
         this.gender = gender;
         this.nickname = nickname;
