@@ -29,6 +29,14 @@ public class Food {
 
     private Integer maxCharacterCalorie;
 
+    //== 연관 관계 메서드==//
+
+    public void addUser(User user){
+        user.getFoodList().add(this);
+    }
+
+
+
     @Builder
     public Food(Long id, User user, String foodName, String foodImagePath, String calorie, Integer maxCharacterCalorie) {
         this.id = id;
@@ -38,4 +46,6 @@ public class Food {
         this.calorie = calorie;
         this.maxCharacterCalorie = maxCharacterCalorie;
     }
+
+
 }
