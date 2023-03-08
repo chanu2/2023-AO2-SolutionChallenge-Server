@@ -19,5 +19,7 @@ public interface FoodImageRepository extends JpaRepository<FoodImage,Long > {
     @Query(value = "SELECT * FROM food_image WHERE food_calorie = :foodCalorie order by RAND() limit 1", nativeQuery = true)
     Optional<FoodImage> findRandomFoodImage(@Param("foodCalorie") Integer foodCalorie);
 
+    Optional<FoodImage> findByFoodName(String foodName);
+
 
 }

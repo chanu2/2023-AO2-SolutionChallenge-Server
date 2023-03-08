@@ -1,6 +1,6 @@
 package gdsc.RunEatServer.domain.asset.controller;
 
-import gdsc.RunEatServer.domain.asset.dto.FoodImageDto;
+import gdsc.RunEatServer.domain.asset.dto.RandomFoodImageDto;
 import gdsc.RunEatServer.domain.asset.dto.ProfileImageDto;
 import gdsc.RunEatServer.domain.asset.service.AssetService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +23,7 @@ public class AssetController {
     }
 
     @GetMapping("/food/image")
-    public FoodImageDto getRandomFoodImage(@RequestParam Integer calorie){
+    public RandomFoodImageDto getRandomFoodImage(@RequestParam Integer calorie){
         return assetService.getRandomFoodImage(calorie);
     }
 

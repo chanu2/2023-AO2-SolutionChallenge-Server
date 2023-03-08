@@ -1,6 +1,6 @@
 package gdsc.RunEatServer.domain.asset.service;
 
-import gdsc.RunEatServer.domain.asset.dto.FoodImageDto;
+import gdsc.RunEatServer.domain.asset.dto.RandomFoodImageDto;
 import gdsc.RunEatServer.domain.asset.entity.FoodImage;
 import gdsc.RunEatServer.domain.asset.repository.FoodImageRepository;
 import org.junit.jupiter.api.Test;
@@ -12,8 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 
 import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Transactional
@@ -121,19 +119,19 @@ class AssetServiceTest {
         em.flush();
         em.clear();
 
-        FoodImageDto randomFoodImage = assetService.getRandomFoodImage(230);
+        RandomFoodImageDto randomFoodImage = assetService.getRandomFoodImage(230);
         System.out.println("randomFoodImage.getFoodName() = " + randomFoodImage.getFoodName());
         System.out.println("randomFoodImage.getUrl() = " + randomFoodImage.getUrl());
 
-        FoodImageDto randomFoodImage1 = assetService.getRandomFoodImage(1100);
+        RandomFoodImageDto randomFoodImage1 = assetService.getRandomFoodImage(1100);
         System.out.println("randomFoodImage.getFoodName() = " + randomFoodImage1.getFoodName());
         System.out.println("randomFoodImage.getUrl() = " + randomFoodImage1.getUrl());
 
-        FoodImageDto randomFoodImage2 = assetService.getRandomFoodImage(1132);
+        RandomFoodImageDto randomFoodImage2 = assetService.getRandomFoodImage(1132);
         System.out.println("randomFoodImage.getFoodName() = " + randomFoodImage2.getFoodName());
         System.out.println("randomFoodImage.getUrl() = " + randomFoodImage2.getUrl());
 
-        FoodImageDto randomFoodImage3 = assetService.getRandomFoodImage(1143);
+        RandomFoodImageDto randomFoodImage3 = assetService.getRandomFoodImage(1143);
         System.out.println("randomFoodImage.getFoodName() = " + randomFoodImage3.getFoodName());
         System.out.println("randomFoodImage.getUrl() = " + randomFoodImage3.getUrl());
 
