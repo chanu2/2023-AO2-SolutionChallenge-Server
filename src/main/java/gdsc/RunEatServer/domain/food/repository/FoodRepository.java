@@ -16,7 +16,9 @@ public interface FoodRepository extends JpaRepository<Food,Long> {
     Optional<Food> findById(Long id);
 
     @Query("select f from Food f"+
-            " join fetch f.user u"+
-            " where u.id = :userId")
+            " where f.user.id = :userId")
     List<Food> findFoodList(@Param("userId")Long userId);
+
+
+    boolean existsByFoodName(String foodName);
 }

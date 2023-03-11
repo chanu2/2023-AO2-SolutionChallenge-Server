@@ -25,9 +25,9 @@ public class Food {
 
     private String foodImagePath;
 
-    private String calorie;
+    private Integer calorie;
 
-    private Integer maxCharacterCalorie;
+
 
     //== 연관 관계 메서드==//
 
@@ -36,15 +36,12 @@ public class Food {
     }
 
 
-
     @Builder
-    public Food(Long id, User user, String foodName, String foodImagePath, String calorie, Integer maxCharacterCalorie) {
-        this.id = id;
+    public Food( User user, String foodName, String foodImagePath, Integer calorie) {
         this.user = user;
         this.foodName = foodName;
         this.foodImagePath = foodImagePath;
         this.calorie = calorie;
-        this.maxCharacterCalorie = maxCharacterCalorie;
     }
 
 

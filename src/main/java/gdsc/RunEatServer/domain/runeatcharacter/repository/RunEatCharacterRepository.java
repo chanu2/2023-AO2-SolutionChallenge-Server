@@ -13,17 +13,11 @@ import java.util.Optional;
 public interface RunEatCharacterRepository extends JpaRepository<RunEatCharacter,Long> {
 
     RunEatCharacter save(RunEatCharacter runEatCharacter);
-
     @Override
     Optional<RunEatCharacter> findById(Long id);
 
+    Optional<RunEatCharacter> findByUser(User user);
 
-    @Query("select c from RunEatCharacter c"+
-            " join fetch c.user u"+
-            " where u.id = :userId")
-    List<Food> getCharacter(@Param("userId")Long userId);
-
-    Optional<RunEatCharacter> findFirstByUserIdOrderByMaxCharacterCalorieDesc(Long userId);
-
+    List<RunEatCharacter> findAll();
 
 }

@@ -4,11 +4,12 @@ import gdsc.RunEatServer.domain.asset.entity.FoodImage;
 import lombok.Getter;
 
 @Getter
-public class FoodImageDto {
+public class RandomFoodImageDto {
     private String url;
     private String foodName;
 
-    public FoodImageDto(FoodImage foodImage) {
+
+    public RandomFoodImageDto(FoodImage foodImage) {
         this.url = foodImage.getFoodImageUrl();
         this.foodName = foodImage.getFoodName();
     }

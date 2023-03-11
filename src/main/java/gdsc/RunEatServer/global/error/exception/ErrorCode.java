@@ -16,6 +16,7 @@ public enum ErrorCode {
 
     /* 404 NOT_FOUND : Resource를 찾을 수 없음 */
     USER_NOT_FOUND(404, "해당하는 정보의 사용자를 찾을 수 없습니다."),
+    USER_EXISTED(404, "이미 존재하는 회원입니다"),
     DUPLICATE_LOGIN(404, "해당 아이디는 이미 존재합니다."),
 
     RESERVATION_NOT_FOUND(404, "해당하는 정보의 방을 찾을 수 없습니다."),
@@ -42,7 +43,11 @@ public enum ErrorCode {
     NO_ERROR_TYPE(404, "오류 발생"),
     PROFILE_IMAGE_NOT_FOUND(404,  "PROFILE Not Found"),
 
-    FOOD_IMAGE_NOT_FOUND(404,  "PROFILE Not Found")
+    FOOD_IMAGE_NOT_FOUND(404,  "PROFILE Not Found"),
+
+    CHARACTER_NOT_FOUND(404,  "Character Not Found"),
+
+    INTERNAL_SERVER_ERROR(500,"서버 에러")
 
 
     ;

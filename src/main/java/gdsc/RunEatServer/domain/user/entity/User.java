@@ -32,7 +32,7 @@ public class User {
     private Gender gender;
 
     private String nickname;
-    private Integer accumulatedCalorie;
+
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles = new ArrayList<>();
 
@@ -43,9 +43,10 @@ public class User {
         this.profilePath = profilePath;
         this.gender = gender;
         this.nickname = nickname;
-        this.accumulatedCalorie = 0;
         this.roles =roles;
     }
+
+
 
 
 }

@@ -29,9 +29,9 @@ public class JwtUtil {
 
     // 1000L이 1초
     //private final long accessTokenValidTime = 1000L * 60 * 60 * 6 ;
-    private final long accessTokenValidTime = 1000L * 60;
+    private final long accessTokenValidTime = 1000L * 60 * 60;
     //private final long refreshTokenValidTime = 1000L * 60 * 60 * 24 * 30;
-    private final long refreshTokenValidTime = 1000L * 60 * 3;
+    private final long refreshTokenValidTime = 1000L * 60 * 60;
 
     private final AuthUserService customUserDetailsService;
     private final RefreshTokenRepository refreshTokenRepository;
