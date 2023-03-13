@@ -2,6 +2,7 @@ package gdsc.RunEatServer.domain.food.entity;
 
 
 import gdsc.RunEatServer.domain.user.entity.User;
+import gdsc.RunEatServer.global.database.BaseEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,7 +15,7 @@ import static javax.persistence.FetchType.LAZY;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Food {
+public class Food extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

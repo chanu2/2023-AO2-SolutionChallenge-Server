@@ -19,8 +19,8 @@ import java.util.Collections;
 @Configuration
 public class TokenVerifier {
 
-    @Value("${google.clientId}")
-    private String clientId;
+//    @Value("${google.clientId}")
+//    private String clientId;
 
     private final NetHttpTransport transport = new NetHttpTransport();
     private final JsonFactory jsonFactory = new GsonFactory();
@@ -31,7 +31,7 @@ public class TokenVerifier {
         log.info("idTokenString={}",idTokenString);
 
         GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
-                .setAudience(Collections.singletonList(clientId))
+                .setAudience(Collections.singletonList("213617031580-3bjijd93fo1fh4jekjo088s6qbb6p6rt.apps.googleusercontent.com"))
                 .build();
 
         GoogleIdToken idToken = verifier.verify(idTokenString);

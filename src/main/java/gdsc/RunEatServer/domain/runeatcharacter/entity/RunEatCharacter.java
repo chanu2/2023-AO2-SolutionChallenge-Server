@@ -1,6 +1,7 @@
 package gdsc.RunEatServer.domain.runeatcharacter.entity;
 
 import gdsc.RunEatServer.domain.user.entity.User;
+import gdsc.RunEatServer.global.database.BaseEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,7 +14,7 @@ import static javax.persistence.FetchType.*;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class RunEatCharacter {
+public class RunEatCharacter extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
