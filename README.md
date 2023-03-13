@@ -12,6 +12,10 @@
 
 ## 📖 Details of the app screens
 
+<p align="center"><img src="https://user-images.githubusercontent.com/96942183/224625473-afda661e-7724-444a-aad1-16152708c6c2.png" width="200" height="500"/></p>
+
+
+
 
 ## 🛠️ ****Tech Stack****
 
