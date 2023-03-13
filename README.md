@@ -21,7 +21,7 @@
   <img src="https://user-images.githubusercontent.com/96942183/224626798-9988ed54-caf6-4f69-a644-59096cfc2e3f.png" align="center" width="240" height="500"/>
   <img src="https://user-images.githubusercontent.com/96942183/224627052-1c69aa39-1733-4c5f-886e-e297baf6339c.png" align="center" width="240" height="500"/>
   <img src="https://user-images.githubusercontent.com/96942183/224627254-e7713ecf-d695-436d-9b7f-224852f8cc2d.png" align="center" width="240" height="500"/>
-  <figcaption align="center">3개 </figcaption>
+  <figcaption align="center"></figcaption>
 </p>
 <br/>
 
