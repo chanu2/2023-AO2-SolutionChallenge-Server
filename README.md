@@ -12,6 +12,13 @@
 
 ## 📖 Details of the app screens
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/96942183/224625473-afda661e-7724-444a-aad1-16152708c6c2.png" align="center" width="32%">
+  <img src="https://user-images.githubusercontent.com/96942183/224625473-afda661e-7724-444a-aad1-16152708c6c2.png" align="center" width="32%">
+  <img src="https://user-images.githubusercontent.com/96942183/224625473-afda661e-7724-444a-aad1-16152708c6c2.png" align="center" width="32%">
+  <figcaption align="center">3개 이미지 띄우기</figcaption>
+</p>
+
 <figure class="half">
     <img src="https://user-images.githubusercontent.com/96942183/224625473-afda661e-7724-444a-aad1-16152708c6c2.png" width="300"/>
     <img src="https://user-images.githubusercontent.com/96942183/224626798-9988ed54-caf6-4f69-a644-59096cfc2e3f.png" width="300"/>
