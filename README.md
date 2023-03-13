@@ -1,29 +1,63 @@
-# Google-DSC-SCH-2023-AO2-SolutionChallenge-Backend
-2023 Solution Challenge Repository for Team AO2 Server
+<h1 align="center">RUN-EAT</h1>
 
-**##커밋 메세지**  
-
-
-> 커밋 형식입니다.
-
-```
-커밋 메세지: 내용 (#number)
-```  
+# 💡 Topic
+2023 Google Solution Challenge
 
 
-|커밋 메세지|설명|
-|------|---|
-|:page_facing_up::|파일생성/구조변경|
-|:art::|코드의 구조/형태 개선|
-|:zap::|성능 개선|
-|:bug::|버그 수정|
-|:fire::|코드/파일 삭제|
-|:sparkles::|새 기능|
-|:white_check_mark::|테스트 추가/수정|
-|:recycle::|코드 리팩토링|
-|:poop::|똥싼 코드|
-|	:loud_sound::|로그 추가/수정|
-|	:pencil2::|오타 수정|
+## 📝 Summary
+비만의 위험성이 증가하면서 세계 각국은 비만을 예방하기 위해 노력 중이다. 런잇 앱을 통해서 오늘 운동한 칼로리 만큼의 음식을 
+내가 아닌 런잇 캐릭터에게 먹여 성장 시킬 수 있다. 귀여운 음식 이미지와 캐릭터를 모으고 자랑하기 위해 재밌게 런닝을 할 수 있도록 도움을 줄 수 있다.
+
+
+
+## 📖 Details of the app screens
+
+
+## 🛠️ ****Tech Stack****
+
+- Spring Boot
+- MariaDB
+- Spring Data JPA
+- Spring Security
+- Amazon EC2
+- Amazon S3
+
+
+## ⚙️ Architecture
+
+- MVC
+
+
+## 👨‍👩‍👧‍👦 Owner
+
+<table>
+
+  <td align=center>
+  <a href="https://github.com/junjange">
+  <img src="https://avatars.githubusercontent.com/u/69571848?v=4" width="100px"  />
+  <br/>
+  Android 🖥
+  <br/>
+  조준장
+  </a>
+  </td>
+ 
+  <td align=center>
+  <a href="https://github.com/chanu2">
+  <img src="https://avatars.githubusercontent.com/u/96942183?v=4" width="100px"  />
+  <br/>
+  BeckEnd 🖥
+  <br/>
+  김찬우
+  </a>
+  </td>
+
+  
+</tr>
+ 
+  
+</table>
+
 
 
 
