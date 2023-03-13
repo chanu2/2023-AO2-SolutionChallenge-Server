@@ -10,9 +10,6 @@
   
   
 
-  
-  
-
 ## 📖 Details of the app screens  
 
 
