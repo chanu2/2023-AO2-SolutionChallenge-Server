@@ -44,7 +44,6 @@ public class UserService {
 
         User user = findMemberEmail(email);
         createToken(email, response);
-        log.info(user.getEmail() + " (id : " + user.getId() + ") login");
         return true;
     }
 
@@ -76,51 +75,6 @@ public class UserService {
         // 어세스, 리프레시 토큰 발급 및 헤더 설정
         log.info("email={}",email);
         createToken(email, response);
-        log.info(user.getEmail() + " (id : " + user.getId() + ") login");
-
-        return true;
-    }
-
-    @Transactional
-    public boolean signUp2 (String email,LoginDto loginDto, HttpServletResponse response) {
-
-        if(!userRepository.findByEmail(email).isEmpty()) {
-            throw UserExistedException.EXCEPTION;
-        }
-
-        User user = userRepository.save(
-                User.builder()
-                        .email(email)
-                        .nickname(loginDto.getNickname())
-                        .gender(loginDto.getSex())
-                        .roles(Collections.singletonList("ROLE_USER"))
-                        .build());
-
-        CharacterImageDto characterImageDto = assetUtils.registerCharacterImage();
-
-
-        runEatCharacterRepository.save(
-                RunEatCharacter.builder()
-                        .user(user)
-                        .characterImagePath(characterImageDto.getCharacterUrl())
-                        .maxCharacterCalorie(characterImageDto.getMaxCalorie())
-                        .build()
-        );
-
-        // 어세스, 리프레시 토큰 발급 및 헤더 설정
-        log.info("email={}",email);
-        createToken(email, response);
-        log.info(user.getEmail() + " (id : " + user.getId() + ") login");
-
-        return true;
-
-    }
-
-    public Boolean signIn2 (String email, HttpServletResponse response) {
-
-        User user = findMemberEmail(email);
-        createToken(email, response);
-        log.info(user.getEmail() + " (id : " + user.getId() + ") login");
 
         return true;
     }
@@ -128,20 +82,13 @@ public class UserService {
 
     public void createToken(String email, HttpServletResponse response) {
 
-        log.info("email={}",email);
-
         String accessToken = jwtUtil.createAccessToken(email, Collections.singletonList("ROLE_USER"));
         String refreshToken = jwtUtil.createRefreshToken(email, Collections.singletonList("ROLE_USER"));
 
         jwtUtil.setHeaderAccessToken(response, accessToken);
         jwtUtil.setHeaderRefreshToken(response, refreshToken);
 
-        log.info("email={}",email);
-        log.info("---------------------------------------------------------------------");
-
         refreshTokenRepository.save(new RefreshToken(refreshToken));
-
-        log.info("---------------------------------------------------------------------");
     }
 
     public User findMemberEmail(String email) {
@@ -151,13 +98,6 @@ public class UserService {
     }
 
 
-
-    // TODO: 2023-03-04 캐릭터로 변경
-    public List<User> getTotalRank(){
-        PageRequest pageRequest = PageRequest.of(0,10, Sort.by(Sort.Direction.DESC,"accumulatedCalorie"));
-
-        return userRepository.findBy(pageRequest).getContent();
-    }
 
 
 }

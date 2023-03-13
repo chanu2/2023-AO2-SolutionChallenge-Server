@@ -23,41 +23,24 @@ public class UserController {
     private final UserService userService;
     private final TokenVerifier tokenVerifier;
 
-    // 회원가입 요청
-
-    @PostMapping("/signIn")
-    public ResponseEntity signIn(@RequestParam String idTokenString,HttpServletResponse response) throws GeneralSecurityException, IOException {
-
-        String email = tokenVerifier.tokenVerify(idTokenString);
-
-        Boolean aBoolean = userService.signIn(email, response);
-
-        return ResponseEntity.ok().body(200);
-    }
 
     // 로그인
-    @PostMapping("/signUp")
-    public ResponseEntity signUp(@RequestParam String idTokenString, @RequestBody LoginDto loginDto, HttpServletResponse response) throws GeneralSecurityException, IOException {
+    @PostMapping("/signIn")
+    public Boolean signIn(@RequestParam String idTokenString,HttpServletResponse response) throws GeneralSecurityException, IOException {
 
         String email = tokenVerifier.tokenVerify(idTokenString);
-        log.info("email={}",email);
 
-        Boolean aBoolean = userService.signUp(email, loginDto, response);
-        log.info("Aaa={}",aBoolean);
-
-        return ResponseEntity.ok(200);
+        return userService.signIn(email, response);
     }
 
-    @PostMapping("/signUp2")
-    public boolean signUp2(@RequestParam String email, @RequestBody LoginDto loginDto, HttpServletResponse response) {
-        return userService.signUp2(email, loginDto, response);
-    }
 
-    @PostMapping("/signIn2")
-    public Boolean signIn2(@RequestParam String email,HttpServletResponse response) {
-        return userService.signIn2(email, response);
-    }
+    //회원가입
+    @PostMapping("/signUp")
+    public Boolean signUp(@RequestParam String idTokenString, @RequestBody LoginDto loginDto, HttpServletResponse response) throws GeneralSecurityException, IOException {
 
+        String email = tokenVerifier.tokenVerify(idTokenString);
+        return userService.signUp(email, loginDto, response);
+    }
 
 
 }

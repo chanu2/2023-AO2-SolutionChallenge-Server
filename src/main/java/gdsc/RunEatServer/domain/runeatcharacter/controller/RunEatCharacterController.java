@@ -10,11 +10,13 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/run")
+@RequestMapping("/character")
 public class RunEatCharacterController {
     private final RunEatCharacterService runEatCharacterService;
-    @PostMapping ("/add/{calorie}/{foodName}")
-    public void addCalorie(@PathVariable Integer calorie,@PathVariable String foodName){
+
+    //먹이기
+    @PostMapping ("/add")
+    public void addCalorie(@RequestParam Integer calorie,@RequestParam String foodName){
         runEatCharacterService.addCalorie(calorie,foodName);
     }
 
@@ -25,9 +27,11 @@ public class RunEatCharacterController {
         return runEatCharacterService.getMainCharacter();
     }
 
-    @GetMapping("/rank")
+
+
+    @GetMapping("/ranking")
     public List<CharacterRankingDto> getCharacterRank(){
-        return runEatCharacterService.getCharacterRanking();
+        return runEatCharacterService.getTotalRank();
     }
 
 

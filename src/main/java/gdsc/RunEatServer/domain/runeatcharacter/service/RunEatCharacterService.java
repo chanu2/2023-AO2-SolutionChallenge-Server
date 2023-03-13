@@ -15,6 +15,8 @@ import gdsc.RunEatServer.domain.runeatcharacter.repository.RunEatCharacterReposi
 import gdsc.RunEatServer.domain.user.entity.User;
 import gdsc.RunEatServer.global.utill.user.UserUtils;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,13 +35,14 @@ public class RunEatCharacterService {
 
 
     // 캐릭터 먹이기
-    // TODO: 2023-03-04 캐릭터 칼로리 넘으면 캐릭터 업데이트 기능 추가
     @Transactional
     public void addCalorie(Integer calorie,String foodName){
 
         User user = userUtils.getUserFromSecurityContext();
         RunEatCharacter runEatCharacter = queryCharacterByUser(user);
 
+
+        // 캐릭터 최대 게이지 넘으면 업데이트
         if(runEatCharacter.getNowCharacterCalorie() >= runEatCharacter.getMaxCharacterCalorie()){
 
             Integer maxCalorie = runEatCharacter.upgradeMaxCalorie();
@@ -63,16 +66,19 @@ public class RunEatCharacterService {
         }
         runEatCharacter.addCharacterCalorie(calorie);
         runEatCharacter.addTodayCharacterCalorie(calorie);
-
     }
 
 
     // 랭킹 조회
-    public List<CharacterRankingDto> getCharacterRanking(){
+    public List<CharacterRankingDto> getTotalRank(){
 
-        List<RunEatCharacter> characterList = runEatCharacterRepository.findAll();
+        PageRequest pageRequest = PageRequest.of(0,10, Sort.by(Sort.Direction.DESC,"nowCharacterCalorie"));
+
+        List<RunEatCharacter> characterList = runEatCharacterRepository.findBy(pageRequest).getContent();
+
         return characterList.stream().map(c -> new CharacterRankingDto(c)).collect(Collectors.toList());
     }
+
 
     // 캐릭터 메인화면 제공
     public CharacterInfoDto getMainCharacter(){
@@ -83,6 +89,7 @@ public class RunEatCharacterService {
         return new CharacterInfoDto(runEatCharacter);
 
     }
+
 
     // 오늘 쌓인 칼로리 초기화
     @Transactional
@@ -99,6 +106,7 @@ public class RunEatCharacterService {
     private List<RunEatCharacter> findAllCharacter(){
         return runEatCharacterRepository.findAll();
     }
+
 
     //유저로 캐릭터 가져오기
     private RunEatCharacter queryCharacterByUser(User user){

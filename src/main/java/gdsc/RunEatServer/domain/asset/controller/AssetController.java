@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/asset")
+@RequestMapping("/asset")
 @RestController
 public class AssetController {
 
@@ -22,6 +22,8 @@ public class AssetController {
         return assetService.getRandomProfileImageUrl();
     }
 
+
+    //칼로리에 따른 이미지 램덤으로 조회
     @GetMapping("/food/image")
     public RandomFoodImageDto getRandomFoodImage(@RequestParam Integer calorie){
         return assetService.getRandomFoodImage(calorie);

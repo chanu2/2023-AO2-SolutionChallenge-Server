@@ -24,7 +24,6 @@ public class AssetService implements AssetUtils {
 
 
 
-
     // 칼로리로 foodImage 가져오기
     @Override
     public RandomFoodImageDto getRandomFoodImage(Integer calorie) {
