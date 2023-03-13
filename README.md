@@ -13,13 +13,13 @@
 ## 📖 Details of the app screens
 
 <figure class="half">
-    <img src="https://user-images.githubusercontent.com/96942183/224625473-afda661e-7724-444a-aad1-16152708c6c2.png">
-    <img src="https://user-images.githubusercontent.com/96942183/224626798-9988ed54-caf6-4f69-a644-59096cfc2e3f.png">
+    <img src="https://user-images.githubusercontent.com/96942183/224625473-afda661e-7724-444a-aad1-16152708c6c2.png" width="300"/>
+    <img src="https://user-images.githubusercontent.com/96942183/224626798-9988ed54-caf6-4f69-a644-59096cfc2e3f.png" width="300"/>
 figure>
   
 <figure class="half">
-    <img src="https://user-images.githubusercontent.com/96942183/224627052-1c69aa39-1733-4c5f-886e-e297baf6339c.png">
-    <img src="https://user-images.githubusercontent.com/96942183/224627254-e7713ecf-d695-436d-9b7f-224852f8cc2d.png">
+    <img src="https://user-images.githubusercontent.com/96942183/224627052-1c69aa39-1733-4c5f-886e-e297baf6339c.png" width="300"/>
+    <img src="https://user-images.githubusercontent.com/96942183/224627254-e7713ecf-d695-436d-9b7f-224852f8cc2d.png" width="300"/>
 figure>
 
 
