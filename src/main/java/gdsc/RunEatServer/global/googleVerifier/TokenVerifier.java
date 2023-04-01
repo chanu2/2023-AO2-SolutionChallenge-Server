@@ -25,7 +25,7 @@ public class TokenVerifier {
 
     public String tokenVerify(String idTokenString) throws GeneralSecurityException, IOException {
 
-        log.info("idTokenString={}",idTokenString);
+
 
         GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
                 .setAudience(Collections.singletonList("213617031580-3bjijd93fo1fh4jekjo088s6qbb6p6rt.apps.googleusercontent.com"))
@@ -33,7 +33,6 @@ public class TokenVerifier {
 
         GoogleIdToken idToken = verifier.verify(idTokenString);
 
-        log.info("idToken={}",idToken);
 
         if (idToken != null) {
 
