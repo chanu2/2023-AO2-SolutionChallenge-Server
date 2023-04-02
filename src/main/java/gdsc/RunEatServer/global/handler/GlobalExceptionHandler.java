@@ -38,8 +38,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<ErrorResponse> runEatExceptionHandler(
             RunEatException e, HttpServletRequest request) {
 
-        log.info("-----------------------------------------------------------------------------");
-
         ErrorCode code = e.getErrorCode();
         ErrorResponse errorResponse =
                 new ErrorResponse(
