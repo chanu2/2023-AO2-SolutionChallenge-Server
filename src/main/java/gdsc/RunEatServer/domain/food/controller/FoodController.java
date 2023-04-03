@@ -15,7 +15,6 @@ import java.util.List;
 @RequestMapping("/food")
 public class FoodController {
     private final FoodService foodService;
-
     @GetMapping("/list")
     public List<FoodResponseDto> getFoodList(){
         return foodService.getFoodList();

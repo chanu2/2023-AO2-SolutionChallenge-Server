@@ -20,8 +20,6 @@ public class CharacterImage {
     private String characterUrl;
     private Integer maxCalorie;
 
-
-    // TODO: 2023-03-04 test를 위한 코드
     public CharacterImage(String characterUrl, Integer maxCalorie) {
         this.characterUrl = characterUrl;
         this.maxCalorie = maxCalorie;
